@@ -64,8 +64,6 @@ async def on_message(message):
       search_queries.append((match.group(1), False))  # [[...]] match
     else:
       search_queries.append((match.group(2), True))   # {{...}} match
-
-  print(search_queries)
   
   if not search_queries:
     return
@@ -79,7 +77,6 @@ async def on_message(message):
     prefix = ("Template:" if is_template and not clean_query.lower().startswith("template:")else "")  
 
     api_query.append(f"{prefix}{clean_query}")
-  print(api_query)
     
   await message.channel.send(lookup(api_query, 1))
 

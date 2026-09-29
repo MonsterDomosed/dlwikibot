@@ -89,6 +89,7 @@ async def on_ready():
     print(f"Synced {len(synced)} command(s) to guild {GUILD}. Logged in as {client.user}")
 
     await client.change_presence(
+        status=discord.Status.idle,
         activity=discord.Activity(
             type=discord.ActivityType.competing,
             name="a pillow fight"
